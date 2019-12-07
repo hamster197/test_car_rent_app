@@ -19,6 +19,7 @@ When you add a machine, an email is sent to the user.
 An email-password pair is used for authorization.
 Test scenario.
 Deploy the system through docker-compose.
+
 Installation:
 1. docker build .
 2. touch docker-compose.yml
