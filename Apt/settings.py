@@ -164,8 +164,8 @@ SOCIALACCOUNT_AUTO_SIGNUP = False
 ACCOUNT_FORMS = {'signup': 'Apt.forms.SignUp'}
 # For email
 EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'hamster197@mail.ru'
-EMAIL_HOST_PASSWORD = 'polina2016'
+EMAIL_HOST_USER = 'user'
+EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
