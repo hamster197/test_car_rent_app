@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2> About:</h2>
+<p>Name: {{ request.user.username }}</p>
+<p>Email: {{ request.user.email }}</p>
+<p>Last login: {{ request.user.last_login }}</p>
+<p>Date joined: {{ request.user.date_joined }}</p>
+<p>Language: {{ lang }}</p>
+<h2>Change data</h2>
+<form class="post-form" method="post">
+   {% csrf_token %}
+   {{ UsEditForm.as_p }}
+   <input type="submit" class="stom-button stom-button-primary" value=" Save Data ">
+</form>
+{% endblock %}

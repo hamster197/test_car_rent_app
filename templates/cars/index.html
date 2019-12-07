@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>New car</h2>
+
+<form action = "" method = "post">
+{% csrf_token %}
+{% for all_lng in tall_lng %}
+    <label for="{{ all_lng.pk }}">Name {{ all_lng.lang }}: </label>
+    <input id="{{ all_lng.pk }}" type="text" required="true" name="{{ all_lng.pk }}">
+{% endfor %}
+    <label for="year">Year of manufacture: </label>
+    <input id="year" type="number" min="1940" max="2020" required="true" name="year">
+    <input type="submit" value="Save new car">
+</form>
+<h2>Your Cars</h2>
+{% for all_cars in  tall_cars %}
+    <p>Created: {{ all_cars.creation_date }} / Manufactured: {{ all_cars.date_of_manufacture }} /
+        {% for name in all_cars.ncar.all %}
+            Name({{ name.lang }}): {{ name.name }} /
+        {% endfor %}
+    {% if all_cars.rented_by %}
+        Car is rented by {{ all_cars.rented_by }}/
+    {% else %}
+        Car is not rented /
+    {% endif %}
+    <a href="{% url 'project:Cars_Change_Rent' idd=all_cars.pk  %}">
+    <button type="submit" class="btn btn-primary"></span>Change rent</button></a>
+    </p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% load socialaccount %}
+
+{% block content %}
+<h2>Register</h2>
+<a href="/accounts/login/">Have account?</a>
+<form class="post-form" method="post">
+        {% csrf_token %}
+            {{ signupform.as_p }}
+<input type="submit" class="stom-button stom-button-primary" value=" register ">
+</form>
+{% endblock %}

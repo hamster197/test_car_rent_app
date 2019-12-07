@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>Change rent</h2>
+    <p>Created: {{ car.creation_date }} </p>
+    <p>Manufactured: {{ car.date_of_manufacture }} </p>
+        {% for name in car.ncar.all %}
+            <p>Name({{ name.lang }}): {{ name.name }} </p>
+        {% endfor %}
+
+<form action = "" method = "post">
+{% csrf_token %}
+    {{ CRForm.as_p }}
+    <input type="submit" value="Save new rent">
+</form>
+{% endblock %}

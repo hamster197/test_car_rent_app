@@ -1,0 +1,11 @@
+*.pyc
+*~
+__pycache__
+/.idea
+/venv
+/Apt/__pycashe__
+/Apt/migrations
+/project/__pycashe__
+/project/migrations
+/project/api/__pycache__
+/project/api/migrations
